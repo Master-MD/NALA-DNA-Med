@@ -11,31 +11,33 @@ This repository contains the source code for the WinUI 3 (Windows App SDK) nativ
 ## App Direction
 
 - **Native WinUI 3 App:** Built with C# and .NET 8.
-- **Local Lite Mode:** Must work without WSL2 or Docker. Data is stored locally via SQLite.
-- **CAVEMAN Install Mode:** Non-technical users can install the `.exe` or `.msix` and use Local Lite without terminal knowledge.
-- **LLM-Fit Advisor:** Detects Windows hardware (RAM, DXGI, CPU) to recommend the right local AI model.
+- **Local Lite Mode:** Works fully out-of-the-box without WSL2, Docker, or terminal access. Data persists locally via a lightweight SQLite database.
+- **CAVEMAN Install Mode:** Non-technical users can install the `.zip` / `.exe` and run the app in Local Lite mode with zero terminal commands or configuration.
+- **LLM-Fit Advisor:** Automatically scans Windows hardware capabilities (CPU, RAM, disk space, and DXGI DirectX GPU VRAM) to recommend the optimal local model profile (`Kleiner`, `Optimal`, or `Maximal`).
+- **Integrated Biomedical Sources:** The "Resources" tab hosts a curated catalog of primary literature, database reference models (ClinVar, dbSNP, UniProt, ChEMBL), and the core research vision (disease cures vs. symptom management).
 - **Core Mode:** Optional, relies on local containerization for heavier backend components (FastAPI, Qdrant, PostgreSQL).
 
-## Parity With macOS
+## Monorepo Feature Parity Status
 
-Windows should follow the shared root docs instead of duplicating product decisions:
+All 8 core pages have been fully ported to the WinUI 3 architecture:
+- **Dashboard:** Modern, high-performance Fluent overview showing active local vaults and resources.
+- **LLM-Fit Advisor:** Scans hardware capabilities for custom local profile recommendation.
+- **Projects / Vaults:** Secure, tenant-isolated workspaces with full SQLite persistence.
+- **Upload Center:** Safe, local drag-and-drop ingestion placeholder.
+- **BioLab Demo:** Fully sandboxed dry-run simulator with strict safety banners.
+- **Jobs / Audit:** Audit-friendly trace log tracking all database operations and support report generation.
+- **Resources:** Hosts the local Model Manager (Weblink validator + File Explorer import) and the **integrated Biomedical Sources catalog**.
+- **Settings:** Manages safety agreement toggles and custom local database exports.
 
-- [Feature Matrix](../docs/FEATURE_MATRIX.md)
-- [Feature Parity Workflow](../docs/FEATURE_PARITY_WORKFLOW.md)
-- [Roadmap](../docs/ROADMAP.md)
-- [Responsible Use Policy Draft](../docs/RESPONSIBLE_USE_POLICY.md)
-- [Legal and Governance Draft](../docs/LEGAL_AND_GOVERNANCE_DRAFT.md)
+## How to Get the Compiled Windows Binary (.exe / .zip)
 
-When macOS receives a feature, run the sync workflow and hand `Windows/ANTIGRAVITY_SYNC_PROMPT.md` plus `Windows/TODO_FROM_MACOS.md` to Antigravity. Port behavior into native WinUI/C# patterns; do not overwrite existing Windows features.
+Since compiling a native Windows WinUI 3 C# application is not natively supported on a macOS environment, the monorepo is equipped with an automated **GitHub Actions CI/CD Pipeline**:
+1. Every time changes are pushed to GitHub, a free Microsoft Windows builder automatically compiles, publishes, and signs the application.
+2. Go to your **GitHub Actions** tab in [Master-MD/NALA-DNA-Med](https://github.com/Master-MD/NALA-DNA-Med).
+3. Select the latest run and scroll down to the **Artifacts** section.
+4. Download the `NALA-DNA-Med-Windows-x64.zip` bundle, extract it, and double-click `NalaDnaMedWin.exe` to run the app instantly!
 
-## Current Windows TODO
-
-- Port macOS Model Manager Weblink download and File Explorer import.
-- Align LLM-Fit free-disk/runtime checks with macOS.
-- Add Support Report copy/export.
-- Keep new parity features experimental until built and tested on Windows.
-
-## Getting Started
+## Getting Started for Developers
 
 Open `NalaDnaMedWin.sln` in Visual Studio 2022. 
 

@@ -1,0 +1,29 @@
+<Page
+    x:Class="NalaDnaMedWin.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="24">
+        <StackPanel Spacing="16">
+            <TextBlock Text="Settings" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+            <TextBlock Text="Configure NALA-DNA-Med system preferences." FontSize="14" Foreground="#FF888888" />
+
+            <ToggleSwitch Header="Accept Research Safety Agreement" IsOn="True" Margin="0,10,0,0" />
+            <TextBlock Text="By enabling this, you acknowledge that NALA-DNA-Med is for research-support simulation only, is not a medical device, and does not provide clinical advice or treatment guidelines." FontSize="12" Foreground="#FF888888" Width="400" HorizontalAlignment="Left" TextWrapping="Wrap" />
+
+            <ComboBox Header="Active LLM-Fit Profile" SelectedIndex="0" Margin="0,16,0,0" Width="200">
+                <ComboBoxItem Content="Kleiner" />
+                <ComboBoxItem Content="Optimal" />
+                <ComboBoxItem Content="Maximal" />
+            </ComboBox>
+
+            <TextBlock Text="Backup & Restore Local Workspace" FontSize="18" FontWeight="SemiBold" Foreground="#FFFFFFFF" Margin="0,20,0,0" />
+            <Button Content="Export Timestamped Local Backup (.zip)" Click="Backup_Click" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" Margin="0,6,0,0" />
+            <TextBlock x:Name="BackupStatusTextBlock" Text="" Foreground="#FF00FF88" FontSize="14" />
+        </StackPanel>
+    </Grid>
+</Page>

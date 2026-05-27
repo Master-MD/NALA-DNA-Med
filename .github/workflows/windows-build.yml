@@ -1,0 +1,41 @@
+name: Build Windows WinUI 3 Native Client
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore NuGet Packages
+      run: nuget restore Windows/NalaDnaMedWin.sln
+
+    - name: Build and Publish WinUI 3 App (Unpackaged EXE)
+      run: |
+        msbuild Windows/NalaDnaMedWin.sln /p:Configuration=Release /p:Platform=x64 /p:PublishProfile=Properties\PublishProfiles\win10-x64.pubxml /p:SelfContained=true
+
+    - name: Package App into ZIP
+      shell: pwsh
+      run: |
+        Compress-Archive -Path Windows\NalaDnaMedWin\bin\x64\Release\net8.0-windows10.0.19041.0\* -DestinationPath macOS\dist\NALA-DNA-Med-Windows-x64.zip -Force
+
+    - name: Upload Windows Binary Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NALA-DNA-Med-Windows-x64
+        path: macOS/dist/NALA-DNA-Med-Windows-x64.zip

@@ -19,6 +19,9 @@ This file is the handoff list for Antigravity after recent macOS work.
   - Add copy/export support report for non-technical helpers.
 - Docs:
   - Keep Windows docs aligned with root docs and macOS safety language.
+  - Link to `docs/PITCH_SUMMARY.md`, `docs/FAQ.md`, `docs/HOWTO.md`, and `docs/SOURCES_AND_FOUNDATION.md`.
+  - Do not re-add old source drops, generated app artifacts, private PDFs/ZIPs, local filesystem paths, personal e-mail addresses, API keys, secrets, or real health data.
+  - Run a privacy scan before committing Windows changes.
 
 ## Experimental First
 

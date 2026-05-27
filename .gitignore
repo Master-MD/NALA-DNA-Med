@@ -39,7 +39,8 @@ bld/
 .build/
 
 # Generated app artifacts
-macOS/dist/
+macOS/dist/*
+!macOS/dist/*.dmg
 
 # Local/private foundation source drops
 -NALA-DNA-MED-fundamentdateien-/

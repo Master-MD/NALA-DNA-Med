@@ -11,11 +11,14 @@ You are working in the `NALA-DNA-Med` monorepo. The goal is to bring the Windows
 5. `Windows/README.md`
 6. Current Windows source under `Windows/NalaDnaMedWin/`
 7. Relevant macOS implementation under `macOS/Sources/`
+8. Public docs: `docs/PITCH_SUMMARY.md`, `docs/FAQ.md`, `docs/HOWTO.md`, `docs/SOURCES_AND_FOUNDATION.md`
 
 ## Non-Negotiable Rules
 
 - Do not delete existing Windows features.
 - Do not overwrite Windows app identity, icons, project files, ports, or installer configuration unless the TODO explicitly requires it.
+- Do not duplicate old source drops, generated binaries, private PDFs, ZIP packages, local paths, personal e-mail addresses, API keys, secrets, or real health data.
+- Do not re-add `-NALA-DNA-MED-fundamentdateien-/`, `macOS/dist/`, generated `.app` bundles, generated DMGs, or obsolete mockup screenshots to Git.
 - Do not copy SwiftUI code into Windows. Port behavior into native WinUI/C# patterns.
 - New parity work starts as `Experimental`.
 - Keep the medical safety boundary visible.
@@ -35,10 +38,31 @@ You are working in the `NALA-DNA-Med` monorepo. The goal is to bring the Windows
 3. Align LLM-Fit checks with macOS where practical.
 4. Add a first-run responsible-use agreement screen after legal copy is finalized.
 5. Keep everything usable in Local Lite Demo Mode without WSL, Docker, or Terminal.
+6. Bring Windows docs to the same public-documentation level as macOS:
+   - README links to pitch summary, FAQ, HowTo, feature matrix, and safety boundary.
+   - Windows-specific install notes stay CAVEMAN-friendly.
+   - Use the current public screenshots/previews only.
 
 ## Verification Expected
 
 - Build the Windows solution.
 - Run any available tests.
 - Manually verify navigation to Dashboard, LLM-Fit, BioLab, Resources/Model Manager, and Settings.
+- Run a privacy scan before committing for local paths, personal e-mail addresses, API-key patterns, generated binaries, and real health data.
 - Report what was implemented, what remains, and what stayed experimental.
+
+## Privacy Scan Starter
+
+Before committing, run an equivalent Windows-safe scan for:
+
+```text
+personal e-mail addresses
+local filesystem paths
+Google Drive/iCloud/private working paths
+API keys and bearer tokens
+private keys
+real patient or health data
+generated binaries and installer artifacts
+```
+
+If a file is useful but private, summarize it into public markdown instead of committing the raw source file.

@@ -51,6 +51,21 @@ namespace NalaDnaMedWin
                 case "LLMFit":
                     ContentFrame.Navigate(typeof(Views.LLMFitPage));
                     break;
+                case "Projects":
+                    ContentFrame.Navigate(typeof(Views.ProjectsPage));
+                    break;
+                case "Upload":
+                    ContentFrame.Navigate(typeof(Views.UploadPage));
+                    break;
+                case "Jobs":
+                    ContentFrame.Navigate(typeof(Views.JobsPage));
+                    break;
+                case "Resources":
+                    ContentFrame.Navigate(typeof(Views.ResourcesPage));
+                    break;
+                case "Settings":
+                    ContentFrame.Navigate(typeof(Views.SettingsPage));
+                    break;
             }
         }
     }

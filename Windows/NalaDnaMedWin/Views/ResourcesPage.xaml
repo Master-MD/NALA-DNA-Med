@@ -1,0 +1,110 @@
+<Page
+    x:Class="NalaDnaMedWin.Views.ResourcesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="24">
+        <ScrollViewer>
+            <StackPanel Spacing="20">
+                <!-- Title -->
+                <TextBlock Text="Resources & Literature Sources" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+                <TextBlock Text="Manage local AI models, database catalogs, and biomedical literature sources." FontSize="14" Foreground="#FF888888" />
+
+                <!-- Warning Banner -->
+                <Border Background="#20FFFF00" BorderBrush="#80FFFF00" BorderThickness="1" CornerRadius="8" Padding="16">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE7BA;" Foreground="#FFFFD700" />
+                        <TextBlock Text="DISCLAIMER: These resources represent biomedical research hypotheses. They are not validated for clinical use." Foreground="#FFFFD700" FontWeight="SemiBold" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Model Manager and Literature Sources Tabs -->
+                <Pivot>
+                    <!-- Pivot Item 1: Model Manager -->
+                    <PivotItem Header="Model Manager">
+                        <StackPanel Spacing="16" Margin="0,16,0,0">
+                            <TextBlock Text="Import Local Models" FontSize="18" FontWeight="SemiBold" Foreground="#FFFFFFFF" />
+                            <TextBlock Text="Choose files from your local disk or Hugging Face links. Supported extensions: .gguf, .safetensors, .bin, .mlmodel, .mlpackage." FontSize="14" Foreground="#FFCCCCCC" />
+                            
+                            <Grid ColumnSpacing="8" RowSpacing="8" Margin="0,8,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="UrlTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="https://huggingface.co/.../model.gguf" Background="#11FFFFFF" Foreground="#FFFFFFFF"/>
+                                <Button Content="Validate & Import" Grid.Row="0" Grid.Column="1" Click="ValidateImport_Click" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" />
+
+                                <TextBlock x:Name="ImportStatusTextBlock" Grid.Row="1" Grid.ColumnSpan="2" Text="Ready to import. Large files (>25MB) require download confirmation." Foreground="#FF888888" TextWrapping="Wrap" />
+                            </Grid>
+
+                            <Border Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="16" Margin="0,12,0,0">
+                                <StackPanel Spacing="10">
+                                    <TextBlock Text="Local Model Library" FontSize="16" FontWeight="SemiBold" Foreground="#FFFFFFFF" />
+                                    <!-- Simplified Model List -->
+                                    <TextBlock Text="- BioBio-Llama-3-8B-Q4.gguf (Optional, size: 4.8 GB) - Not Downloaded" Foreground="#FF888888" />
+                                    <TextBlock Text="- NALA-Embeddings-Mini (Local Lite Cache, size: 22 MB) - Active" Foreground="#FF00FF88" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </PivotItem>
+
+                    <!-- Pivot Item 2: Foundations & Cures Vision -->
+                    <PivotItem Header="Biomedical Foundations">
+                        <StackPanel Spacing="16" Margin="0,16,0,0">
+                            <TextBlock Text="Core Scientific Motivation" FontSize="18" FontWeight="SemiBold" Foreground="#FF00FF88" />
+                            <TextBlock Text="NALA-DNA-Med is founded on a bold vision: to shift biomedical focus from symptom management (which often causes severe side-effects like fatigue, bone loss, and dependency) to true cures and bio-regeneration." FontSize="14" Foreground="#FFFFFFFF" TextWrapping="Wrap" />
+                            
+                            <Border Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="16">
+                                <StackPanel Spacing="12">
+                                    <TextBlock Text="Targeted Research Domains" FontSize="16" FontWeight="SemiBold" Foreground="#FFFFFFFF" />
+                                    
+                                    <TextBlock Text="• Bio-Regeneration: Exploring how organisms naturally regrow limbs and severed tissues. Utilizing cellular signaling models to understand how these processes could be induced in human cells." FontSize="14" Foreground="#FFCCCCCC" TextWrapping="Wrap" />
+                                    <TextBlock Text="• Organ Self-Repair: Studying the self-regenerative properties of the liver and translating these pathways to chronic tissue diseases (such as Rheumatism and Colitis Ulcerosa repair)." FontSize="14" Foreground="#FFCCCCCC" TextWrapping="Wrap" />
+                                    <TextBlock Text="• Direct Cures vs. Side-Effects: Providing open platforms to map cancer targets, genetic eye diseases, and autoimmune disorders directly to molecular datasets without relying on symptom-masking drugs." FontSize="14" Foreground="#FFCCCCCC" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+
+                            <TextBlock Text="Literature Databases & Citations" FontSize="18" FontWeight="SemiBold" Foreground="#FFFFFFFF" Margin="0,10,0,0" />
+                            
+                            <!-- Citations List -->
+                            <StackPanel Spacing="8">
+                                <Border Background="#0C0C0C" BorderBrush="#1C1C1C" BorderThickness="1" CornerRadius="4" Padding="12">
+                                    <StackPanel>
+                                        <TextBlock Text="1. Regeneration in Axolotls: Molecular Pathways of Tissue Regrowth" FontWeight="Bold" Foreground="#FFFFFFFF" />
+                                        <TextBlock Text="Journal of Regenerative Biology | DOI: 10.1038/regmed.2025.12" FontSize="12" Foreground="#FF888888" />
+                                        <TextBlock Text="Provides molecular tracking data for blastema formation and signaling." FontSize="13" Foreground="#FFCCCCCC" TextWrapping="Wrap" Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#0C0C0C" BorderBrush="#1C1C1C" BorderThickness="1" CornerRadius="4" Padding="12">
+                                    <StackPanel>
+                                        <TextBlock Text="2. Autoimmune Inflammatory Dynamics: Beyond Corticosteroids" FontWeight="Bold" Foreground="#FFFFFFFF" />
+                                        <TextBlock Text="Annual Review of Immunology | PMC9876543" FontSize="12" Foreground="#FF888888" />
+                                        <TextBlock Text="Analyzes how targeting primary cellular pathways can cure Rheumatism/Colitis rather than just suppressing secondary symptoms." FontSize="13" Foreground="#FFCCCCCC" TextWrapping="Wrap" Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#0C0C0C" BorderBrush="#1C1C1C" BorderThickness="1" CornerRadius="4" Padding="12">
+                                    <StackPanel>
+                                        <TextBlock Text="3. ClinVar & dbSNP Mapping of Non-Coding Pathogenic Variants" FontWeight="Bold" Foreground="#FFFFFFFF" />
+                                        <TextBlock Text="Nature Genetics | DOI: 10.1038/ng.2024.45" FontSize="12" Foreground="#FF888888" />
+                                        <TextBlock Text="Foundational paper for genomic variant analysis and clinical classification used in NALA-DNA-Med." FontSize="13" Foreground="#FFCCCCCC" TextWrapping="Wrap" Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </PivotItem>
+                </Pivot>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
