@@ -1,0 +1,45 @@
+<Page
+    x:Class="NalaDnaMedWin.Views.LLMFitPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="24">
+        <StackPanel Spacing="24">
+            <TextBlock Text="LLM-Fit Advisor" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+            <TextBlock Text="Analysiere System-Hardware, um das optimale lokale KI-Modell vorzuschlagen..." Foreground="#FFCCCCCC" />
+
+            <Border Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Text="Empfohlenes Profil:" FontSize="16" Foreground="#FFAAAAAA" />
+                    <TextBlock x:Name="ProfileTextBlock" Grid.Row="1" Text="Lade..." FontSize="32" FontWeight="Bold" Foreground="#FFFFFFFF" Margin="0,4,0,16"/>
+
+                    <TextBlock Grid.Row="2" Text="Zugewiesenes Modell:" FontSize="16" Foreground="#FFAAAAAA" />
+                    <TextBlock x:Name="ModelNameTextBlock" Grid.Row="3" Text="..." FontSize="20" Foreground="#FF00FF88" Margin="0,4,0,0"/>
+                </Grid>
+            </Border>
+
+            <Border Background="#20FF0000" BorderBrush="#80FF0000" BorderThickness="1" CornerRadius="4" Padding="12">
+                <TextBlock Text="⚠️ Achtung: Lokale Modelle (Weights) können mehrere Gigabyte groß sein. Bitte stelle sicher, dass du eine stabile Internetverbindung hast." Foreground="#FFFF8888" TextWrapping="Wrap" />
+            </Border>
+
+            <Button x:Name="DownloadButton" Content="Modell herunterladen" Background="#FF00FF88" Foreground="Black" FontWeight="Bold" Padding="16,8" Click="DownloadButton_Click"/>
+            
+            <StackPanel x:Name="ProgressPanel" Visibility="Collapsed" Spacing="8">
+                <TextBlock x:Name="ProgressText" Text="0% heruntergeladen..." Foreground="#FFCCCCCC" />
+                <ProgressBar x:Name="DownloadProgressBar" Maximum="100" Value="0" Foreground="#FF00FF88" Height="10"/>
+                <TextBlock x:Name="SuccessText" Text="Download erfolgreich! Modell ist einsatzbereit." Foreground="#FF00FF88" FontWeight="Bold" Visibility="Collapsed" Margin="0,8,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
