@@ -16,6 +16,16 @@ Stand: 2026-05-27
    - `Maximal`
 8. Confirm any large downloads before they start.
 
+## Add Models Without Terminal
+
+Use `Resources > Model Manager`:
+
+1. For a Weblink, paste a trusted `https://` model URL, click `Check Weblink`, then click `Download Weblink`.
+2. For a file on disk, click `Choose Local Model File...`, select a `.gguf`, `.safetensors`, `.bin`, `.mlmodel`, or `.mlpackage` from Finder or an external drive, then click `Import Selected File`.
+3. Wait until the status turns green.
+
+The app stores imported/downloaded model files in `~/Library/Application Support/NALA-DNA-Med/Models`.
+
 ## CAVEMAN Installation Requirement
 
 Normal Local Lite installation must be possible without Terminal, Docker, Python, Git, Xcode, or developer knowledge.

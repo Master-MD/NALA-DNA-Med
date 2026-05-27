@@ -84,6 +84,24 @@ public enum DownloadDecision: String, Codable, Sendable {
     case blockedInsufficientDisk
 }
 
+public enum ModelImportSource: String, Codable, Equatable, Sendable {
+    case webLink
+    case localFile
+}
+
+public struct ModelImportPlan: Codable, Equatable, Sendable {
+    public var source: ModelImportSource
+    public var displayName: String
+    public var url: URL
+    public var expectedSizeBytes: Int64?
+    public var requiresConfirmation: Bool
+}
+
+public enum ModelImportError: Error, Equatable, Sendable {
+    case unsupportedURLScheme
+    case unsupportedFileType
+}
+
 public enum ConfidenceLevel: String, Codable, Sendable {
     case low
 }

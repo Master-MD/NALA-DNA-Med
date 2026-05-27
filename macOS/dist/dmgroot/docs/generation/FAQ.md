@@ -30,6 +30,14 @@ LLM-Fit is the app's model advisor. It scans hardware, free disk, installed runt
 
 No. On first launch, it may download small catalogs, demo metadata, templates, and lightweight resources. Large LLM or biomedical model downloads must require explicit confirmation.
 
+## How do I add a model without Terminal?
+
+Open `Resources`, use `Model Manager`, then either paste a trusted `https://` Weblink and click `Download Weblink`, or click `Choose Local Model File...` and select a model from Finder or an external drive. Supported file endings are `.gguf`, `.safetensors`, `.bin`, `.mlmodel`, and `.mlpackage`.
+
+## Which models are already downloaded on this workstation?
+
+On 2026-05-27, the local Ollama cache was prepared with `qwen3:4b` and `qwen3-embedding:0.6b`. A pre-existing larger model, `hf.co/Jiunsong/supergemma4-26b-uncensored-gguf-v2:latest`, was also present. These model weights live in the local Ollama cache and are not embedded into the small DMG.
+
 ## Which model should the current Mac use?
 
 The current observed machine is an Apple M4 Max MacBook Pro with 64 GB unified memory and a 40-core GPU, but only about 35 GB free disk space at inspection time. That means the model advisor should recommend a small or balanced setup until more disk space is available.

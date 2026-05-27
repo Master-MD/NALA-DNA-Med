@@ -39,6 +39,16 @@ The generated app must include a first-launch wizard:
 
 The wizard must provide a `Use Demo Mode` path even when network, Docker, Ollama, or model downloads are unavailable.
 
+## Optional Model Import
+
+A non-technical user can add models later without Terminal:
+
+1. Open `Resources`.
+2. Paste a trusted Weblink and choose `Download Weblink`, or choose `Choose Local Model File...` for a file on the Mac or external drive.
+3. Wait for a green status.
+
+Large models are optional. The app must stay usable in Demo Mode even when the user skips downloads.
+
 ## Error Message Format
 
 Use this format for user-facing errors:
@@ -72,4 +82,3 @@ No Terminal commands may be required for this path.
 ## Developer Responsibility
 
 Developer docs and scripts may use Terminal, but user-facing installation must not depend on it. If a feature requires developer tools, Docker, Xcode, or command-line knowledge, label it as `Advanced` or `Developer`.
-

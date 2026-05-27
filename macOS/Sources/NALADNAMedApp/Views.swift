@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 import NALADNAMedCore
 
 struct ContentView: View {
@@ -282,11 +283,78 @@ struct JobsAuditView: View {
 }
 
 struct ResourcesView: View {
+    @EnvironmentObject private var model: AppModel
+    @State private var isChoosingModelFile = false
+    private let modelFileTypes: [UTType] = [
+        UTType(filenameExtension: "gguf") ?? .data,
+        UTType(filenameExtension: "safetensors") ?? .data,
+        UTType(filenameExtension: "bin") ?? .data,
+        UTType(filenameExtension: "mlmodel") ?? .data,
+        UTType(filenameExtension: "mlpackage") ?? .package
+    ]
+
     var body: some View {
         ScreenScaffold(title: "Resources", subtitle: "Small catalogs can refresh automatically; large models need confirmation.") {
             StatusCard(title: "Auto", status: .green, message: "Small JSON catalogs, templates, citations")
             StatusCard(title: "Confirm", status: .yellow, message: "LLM weights, biomedical weights, large datasets")
             StatusCard(title: "Blocked", status: .red, message: "Unknown source or insufficient disk")
+
+            Card {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Model Manager").font(.headline)
+                    Text("Direkt per Weblink oder ueber Finder/HD-Datei auswaehlen. Der Plan wird vorbereitet; grosse Transfers bleiben bestaetigungspflichtig.")
+                        .foregroundStyle(.secondary)
+
+                    TextField("https://huggingface.co/.../model.gguf", text: $model.modelWebLink)
+                    HStack {
+                        TextField("Expected GB", text: $model.modelExpectedSizeGB)
+                            .frame(width: 120)
+                        Button("Check Weblink") {
+                            model.planWebModelImport()
+                        }
+                        Button("Download Weblink") {
+                            model.downloadWebModel()
+                        }
+                        .disabled(model.isModelTransferRunning)
+                        Button("Choose Local Model File...") {
+                            isChoosingModelFile = true
+                        }
+                        .disabled(model.isModelTransferRunning)
+                    }
+
+                    Text(model.modelImportMessage)
+                        .font(.system(.body, design: .monospaced))
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+
+                    if let plan = model.modelImportPlan {
+                        InfoLine("Source", plan.source.rawValue)
+                        InfoLine("Model", plan.displayName)
+                        InfoLine("Confirm", plan.requiresConfirmation ? "yes" : "no")
+
+                        if plan.source == .localFile {
+                            Button("Import Selected File") {
+                                model.importPlannedLocalModel()
+                            }
+                            .disabled(model.isModelTransferRunning)
+                        }
+                    }
+                }
+            }
+        }
+        .fileImporter(
+            isPresented: $isChoosingModelFile,
+            allowedContentTypes: modelFileTypes,
+            allowsMultipleSelection: false
+        ) { result in
+            switch result {
+            case .success(let urls):
+                if let url = urls.first {
+                    model.planLocalModelImport(from: url)
+                }
+            case .failure(let error):
+                model.recordModelImportFailure(error)
+            }
         }
     }
 }

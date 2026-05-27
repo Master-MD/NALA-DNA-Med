@@ -88,6 +88,40 @@ public struct BioLabDemoService: Sendable {
     }
 }
 
+public struct ModelImportPlanner: Sendable {
+    private let supportedExtensions: Set<String> = ["gguf", "bin", "safetensors", "mlmodel", "mlpackage"]
+    private let confirmationThreshold: Int64 = 25 * 1024 * 1024
+
+    public init() {}
+
+    public func planWebDownload(from url: URL, expectedSizeBytes: Int64?) throws -> ModelImportPlan {
+        guard ["https", "http"].contains(url.scheme?.lowercased()) else {
+            throw ModelImportError.unsupportedURLScheme
+        }
+        let displayName = url.lastPathComponent.isEmpty ? url.host ?? "remote-model" : url.lastPathComponent
+        return ModelImportPlan(
+            source: .webLink,
+            displayName: displayName,
+            url: url,
+            expectedSizeBytes: expectedSizeBytes,
+            requiresConfirmation: (expectedSizeBytes ?? confirmationThreshold + 1) > confirmationThreshold
+        )
+    }
+
+    public func planLocalFileImport(from url: URL) throws -> ModelImportPlan {
+        guard supportedExtensions.contains(url.pathExtension.lowercased()) else {
+            throw ModelImportError.unsupportedFileType
+        }
+        return ModelImportPlan(
+            source: .localFile,
+            displayName: url.lastPathComponent,
+            url: url,
+            expectedSizeBytes: nil,
+            requiresConfirmation: true
+        )
+    }
+}
+
 public enum TenantShield {
     public static func validate(_ context: TenantContext) throws {
         guard let tenantID = context.tenantID, !tenantID.isEmpty else {

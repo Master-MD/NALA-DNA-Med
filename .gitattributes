@@ -1,0 +1,8 @@
+*.app binary
+*.dmg binary
+*.icns binary
+*.pdf binary
+*.png binary
+*.pptx binary
+*.webloc binary
+*.zip binary

@@ -120,3 +120,31 @@ import Foundation
     #expect(report.contains("Recommended profile"))
     #expect(report.contains("No Terminal required for Local Lite"))
 }
+
+@Test func modelImportPlannerAcceptsHttpsWeblink() async throws {
+    let url = URL(string: "https://huggingface.co/example/model/resolve/main/model.gguf")!
+
+    let plan = try ModelImportPlanner().planWebDownload(from: url, expectedSizeBytes: 4 * 1024 * 1024 * 1024)
+
+    #expect(plan.source == .webLink)
+    #expect(plan.requiresConfirmation)
+    #expect(plan.displayName == "model.gguf")
+}
+
+@Test func modelImportPlannerAcceptsLocalGGUFFile() async throws {
+    let fileURL = URL(fileURLWithPath: "/Volumes/ModelHD/models/qwen3-4b.gguf")
+
+    let plan = try ModelImportPlanner().planLocalFileImport(from: fileURL)
+
+    #expect(plan.source == .localFile)
+    #expect(plan.displayName == "qwen3-4b.gguf")
+    #expect(plan.requiresConfirmation)
+}
+
+@Test func modelImportPlannerRejectsUnknownLocalFileType() async throws {
+    let fileURL = URL(fileURLWithPath: "/Volumes/ModelHD/models/readme.txt")
+
+    #expect(throws: ModelImportError.unsupportedFileType) {
+        try ModelImportPlanner().planLocalFileImport(from: fileURL)
+    }
+}

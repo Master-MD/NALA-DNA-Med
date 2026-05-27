@@ -34,3 +34,6 @@ bld/
 
 # Mac OS X
 .DS_Store
+
+# SwiftPM
+.build/

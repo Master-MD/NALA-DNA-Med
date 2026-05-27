@@ -65,6 +65,8 @@ stage_app() {
 </dict>
 </plist>
 PLIST
+
+  /usr/bin/codesign --force --deep --sign - "$APP_BUNDLE" >/dev/null
 }
 
 open_app() {

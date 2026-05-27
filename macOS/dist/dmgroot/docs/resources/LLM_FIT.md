@@ -41,6 +41,17 @@ Recommendation for that state:
 - Do not automatically pull large 30B+ models.
 - Prompt the user to free disk space before `Maximal`.
 
+Downloaded on this workstation on 2026-05-27:
+
+- `qwen3:4b`, size about 2.5 GB.
+- `qwen3-embedding:0.6b`, size about 639 MB.
+
+Already present before this run:
+
+- `hf.co/Jiunsong/supergemma4-26b-uncensored-gguf-v2:latest`, size about 16 GB.
+
+These are Ollama cache entries, not files embedded in the DMG.
+
 ## Profile Behavior
 
 ### Kleiner
@@ -111,3 +122,11 @@ Before downloading a large model, show:
 - cancel option
 - confirmation button
 
+## Manual Model Sources
+
+The app's `Resources > Model Manager` supports two no-terminal paths:
+
+- Weblink: paste a trusted `https://` or `http://` model URL, check it, then start the download.
+- Finder/external drive: choose a local `.gguf`, `.safetensors`, `.bin`, `.mlmodel`, or `.mlpackage` and import it into the app model folder.
+
+Imported/downloaded model files are stored under `~/Library/Application Support/NALA-DNA-Med/Models`.
