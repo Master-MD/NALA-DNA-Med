@@ -20,8 +20,7 @@ NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung w
 
 - `macOS/`: Native SwiftUI macOS app with CAVEMAN install path, LLM-Fit, model import, safety boundary, docs, and DMG workflow.
 - `Windows/`: Native WinUI 3 / Windows App SDK client created with the same product direction and LLM-Fit concept.
-- `-NALA-DNA-MED-fundamentdateien-/`: Original concept packages, pitch material, screenshots, source/data bundle, and early app mockups.
-- `docs/`: Cross-platform project vision, source archive notes, safety framing, and public-facing project story.
+- `docs/`: Cross-platform project vision, pitch summary, screenshots, source notes, safety framing, and public-facing project story.
 
 ## Current UI Preview
 
@@ -29,7 +28,7 @@ NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung w
 |---|---|
 | ![macOS SwiftUI app preview](docs/assets/screenshots/macos/macos-swiftui-current.svg) | ![Windows WinUI app preview](docs/assets/screenshots/windows/windows-winui-current.svg) |
 
-Additional foundation screenshots are preserved in `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/`.
+The old private foundation binaries are intentionally not stored in the public repository.
 
 ## Core Ideas
 
@@ -54,7 +53,7 @@ swift build
 ./script/make_dmg.sh
 ```
 
-The generated DMG is `macOS/dist/NALA-DNA-Med.dmg`.
+The generated DMG is local-only at `macOS/dist/NALA-DNA-Med.dmg` and is ignored by Git.
 
 ### Windows
 
@@ -62,16 +61,15 @@ The Windows app is in `Windows/` and uses WinUI 3 / Windows App SDK.
 
 The Windows version is intentionally kept in this repository. Do not remove or overwrite it when working on macOS docs or packaging.
 
-## Fundamentals
+## Pitch Summary
 
-The original project foundation is preserved in `-NALA-DNA-MED-fundamentdateien-/`:
+The current public pitch is preserved as a sanitized markdown summary:
 
-- `pre App Idee's/`: idea archives
-- `pre App Pitch/`: pitch deck, source/data PDF, and source package
-- `pre Screenshots/`: early UI screenshots
-- repository link artifact
+- [Doctor Funding Pitch Summary](docs/PITCH_SUMMARY.md)
+- [FAQ](docs/FAQ.md)
+- [How To](docs/HOWTO.md)
 
-Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md), [docs/WIKI_INDEX.md](docs/WIKI_INDEX.md), and [-NALA-DNA-MED-fundamentdateien-/README.md](-NALA-DNA-MED-fundamentdateien-/README.md).
+Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md), [docs/WIKI_INDEX.md](docs/WIKI_INDEX.md), and [docs/PITCH_SUMMARY.md](docs/PITCH_SUMMARY.md).
 
 ## Next-Version Ideas
 

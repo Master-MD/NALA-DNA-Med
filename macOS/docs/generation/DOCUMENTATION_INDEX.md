@@ -23,16 +23,9 @@ Stand: 2026-05-27
 - [LLM-Fit](../resources/LLM_FIT.md)
 - [Windows Native Strategy](../windows/WINDOWS_NATIVE_STRATEGY.md)
 
-## Existing Source Material In Folder
+## Public Source Material
 
-- `NALA-DNA-Med-aPP_MasterPackage.zip`
-- `NALA-DNA-Med-aPP_extra_mockups.zip`
-- `NALA-DNA-Med_Quellenpaket.zip`
-- `NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
-- `NALA-DNA-Med_Doctor-Funding-Pitch.pptx`
-- `04_login_tenant_shield.png`
-- `05_projects_vaults.png`
-- `06_upload_center.png`
-- `07_jobs_audit.png`
-- `08_settings_backup_runtime.png`
-- `09_biolab_graph_view.png`
+- Root README and `docs/` contain the current public overview.
+- `docs/PITCH_SUMMARY.md` contains the sanitized doctor/gremium pitch.
+- `docs/assets/screenshots/` contains current public app previews.
+- Old binary source drops, generated app bundles, local paths, and private working files are intentionally not stored in the public repository.

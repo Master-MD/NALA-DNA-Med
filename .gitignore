@@ -37,3 +37,9 @@ bld/
 
 # SwiftPM
 .build/
+
+# Generated app artifacts
+macOS/dist/
+
+# Local/private foundation source drops
+-NALA-DNA-MED-fundamentdateien-/

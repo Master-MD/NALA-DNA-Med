@@ -92,13 +92,13 @@ NALA-DNA-Med/
 
 ## 4. App Icon
 
-Use this icon source:
+Use the committed app icon:
 
 ```text
-/Users/ultramacuser/Library/Mobile Documents/com~apple~CloudDocs/-DC_Consulting-/___INTERN___/*****AppEntwicklung*****/*****NALA-Bilder*****/NALA/***NALA-AppZ-IconS***/NALA-DNA-Med.png
+macOS/Resources/NALA-DNA-Med.icns
 ```
 
-Generate `.icns` sizes:
+If the icon must be regenerated from a private PNG source, set `NALA_ICON_SOURCE` locally and run:
 
 - 16x16
 - 32x32
@@ -385,8 +385,8 @@ A native macOS SwiftUI app with complete documentation, tests, and DMG packaging
 CAVEMAN requirement:
 Normal Local Lite installation must be possible for a non-technical user. The user must be able to open the DMG, drag the app into Applications, start the app, read the safety notice, run System Check, choose Kleiner, and use Demo Mode without Terminal, Docker, Python, Git, Xcode, or developer knowledge. Technical failures must be shown as green/yellow/red status with problem, impact, next step, and technical detail. Include a Copy Support Report action.
 
-Use this app icon:
-/Users/ultramacuser/Library/Mobile Documents/com~apple~CloudDocs/-DC_Consulting-/___INTERN___/*****AppEntwicklung*****/*****NALA-Bilder*****/NALA/***NALA-AppZ-IconS***/NALA-DNA-Med.png
+Use this committed app icon:
+macOS/Resources/NALA-DNA-Med.icns
 
 App architecture:
 - Native SwiftUI macOS app.

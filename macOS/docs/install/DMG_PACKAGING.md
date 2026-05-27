@@ -13,13 +13,13 @@ Produce a local macOS distributable:
 
 ## Icon Source
 
-Use:
+Use the committed app icon:
 
 ```text
-/Users/ultramacuser/Library/Mobile Documents/com~apple~CloudDocs/-DC_Consulting-/___INTERN___/*****AppEntwicklung*****/*****NALA-Bilder*****/NALA/***NALA-AppZ-IconS***/NALA-DNA-Med.png
+macOS/Resources/NALA-DNA-Med.icns
 ```
 
-Generate `.icns` with standard macOS icon sizes:
+If the icon must be regenerated from a private PNG source, set `NALA_ICON_SOURCE` locally and run:
 
 - 16x16
 - 32x32
@@ -53,4 +53,3 @@ Before claiming a release build:
 ## Notarization Note
 
 Notarization requires Apple Developer signing credentials. The generated project should provide instructions and validation commands, but local generation must not claim notarization unless it actually completed.
-

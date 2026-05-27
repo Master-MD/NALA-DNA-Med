@@ -2,41 +2,36 @@
 
 Status: 2026-05-27
 
-## Repository Source Areas
+## Public Repository Policy
 
-- `-NALA-DNA-MED-fundamentdateien-/`
-  - Original concept, pitch, source/data, and screenshot materials.
-- `macOS/docs/`
-  - SwiftUI app specification, LLM-Fit notes, safety notes, installation docs, DMG packaging docs, and Codex/Antigravity generation prompts.
-- `Windows/docs/`
-  - Windows-specific install and safety notes.
+The public GitHub repository stores current source code, current documentation, current app previews, and curated summaries.
 
-## Preserved Foundation Files
+It does not store old foundation ZIPs, pitch PDFs, raw local source drops, local `.webloc` files, generated DMGs, generated `.app` bundles, personal filesystem paths, API keys, or health data.
 
-### Idea Archives
+## Current Public Source Areas
 
-- `-NALA-DNA-MED-fundamentdateien-/pre App Idee's/NALA-DNA-Med-aPP_MasterPackage.zip`
-- `-NALA-DNA-MED-fundamentdateien-/pre App Idee's/NALA-DNA-Med-aPP_extra_mockups.zip`
+- `README.md`
+  - Public project overview.
+- `docs/PITCH_SUMMARY.md`
+  - Sanitized summary of the doctor/gremium pitch.
+- `docs/assets/screenshots/`
+  - Current public app previews.
+- `macOS/`
+  - Native SwiftUI app source and macOS docs.
+- `Windows/`
+  - Native WinUI app source and Windows docs.
+- `docs/`
+  - Shared project wiki, roadmap, safety, governance, references, and parity workflow.
 
-### Pitch and Source Package
+## Local-Only Foundation Material
 
-- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
-- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pptx`
-- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Quellen-und-Datenblatt.pdf`
-- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Quellenpaket.zip`
+Original PDFs, slide decks, ZIP packages, and old mockups may exist in local working folders, but they should be treated as private source material unless reviewed and intentionally converted into public markdown.
 
-### Screenshots
-
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/04_login_tenant_shield.png`
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/05_projects_vaults.png`
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/06_upload_center.png`
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/07_jobs_audit.png`
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/08_settings_backup_runtime.png`
-- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/09_biolab_graph_view.png`
+If useful content from a private source file should be public, summarize it into a document such as [PITCH_SUMMARY.md](PITCH_SUMMARY.md) and remove private paths, personal contact details, API keys, raw clinical data, and obsolete claims.
 
 ## Evidence Hygiene
 
-The foundation files explain the idea and project direction. They should not be treated as clinical proof.
+The foundation material explains the idea and project direction. It should not be treated as clinical proof.
 
 When adding biomedical claims, add primary scientific references where possible:
 

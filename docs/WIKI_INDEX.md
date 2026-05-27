@@ -8,6 +8,9 @@ This is the first repo-native wiki index. It is intentionally markdown-first so 
 
 - [Project Vision](PROJECT_VISION.md)
 - [Public Story](PUBLIC_STORY.md)
+- [Pitch Summary](PITCH_SUMMARY.md)
+- [FAQ](FAQ.md)
+- [How To](HOWTO.md)
 - [Medical Safety Boundary](MEDICAL_SAFETY_BOUNDARY.md)
 - [Sources and Foundation Archive](SOURCES_AND_FOUNDATION.md)
 - [Roadmap](ROADMAP.md)

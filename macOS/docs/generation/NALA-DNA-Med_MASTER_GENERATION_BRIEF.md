@@ -27,13 +27,13 @@ The app must feel like a real Mac app:
 
 ## App Icon
 
-Use:
+Use the committed app icon:
 
 ```text
-/Users/ultramacuser/Library/Mobile Documents/com~apple~CloudDocs/-DC_Consulting-/___INTERN___/*****AppEntwicklung*****/*****NALA-Bilder*****/NALA/***NALA-AppZ-IconS***/NALA-DNA-Med.png
+macOS/Resources/NALA-DNA-Med.icns
 ```
 
-Generate `NALA-DNA-Med.icns` from it and configure it as the app icon.
+If the icon must be regenerated from a private PNG source, set `NALA_ICON_SOURCE` locally and run `./script/make_icns.sh`. Do not commit private filesystem paths.
 
 ## Runtime Modes
 

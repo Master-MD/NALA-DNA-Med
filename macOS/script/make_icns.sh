@@ -2,13 +2,17 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SOURCE_ICON="/Users/ultramacuser/Library/Mobile Documents/com~apple~CloudDocs/-DC_Consulting-/___INTERN___/*****AppEntwicklung*****/*****NALA-Bilder*****/NALA/***NALA-AppZ-IconS***/NALA-DNA-Med.png"
 RESOURCES_DIR="$ROOT_DIR/Resources"
 ICONSET_DIR="$RESOURCES_DIR/NALA-DNA-Med.iconset"
 ICNS_PATH="$RESOURCES_DIR/NALA-DNA-Med.icns"
+SOURCE_ICON="${NALA_ICON_SOURCE:-}"
 
-if [[ ! -f "$SOURCE_ICON" ]]; then
-  echo "Icon source not found: $SOURCE_ICON" >&2
+if [[ -z "$SOURCE_ICON" || ! -f "$SOURCE_ICON" ]]; then
+  if [[ -f "$ICNS_PATH" ]]; then
+    echo "$ICNS_PATH"
+    exit 0
+  fi
+  echo "Set NALA_ICON_SOURCE to a local PNG path or commit Resources/NALA-DNA-Med.icns." >&2
   exit 1
 fi
 
