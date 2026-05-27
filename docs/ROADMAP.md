@@ -11,6 +11,8 @@ NALA-DNA-Med should grow in a controlled sequence: local apps first, then source
 - Add a source-backed public wiki under `docs/wiki/`.
 - Expand Model Manager to support trusted model catalogs, checksums, license metadata, and interrupted-download resume.
 - Add local project vault search over PDFs, notes, and source packages.
+- Use `docs/FEATURE_MATRIX.md` and `Windows/TODO_FROM_MACOS.md` as the Mac-to-Windows feature parity workflow.
+- Draft and review the first-run responsible-use agreement before enabling real clinical uploads.
 
 ## Research Automation Ideas
 

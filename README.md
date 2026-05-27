@@ -20,7 +20,7 @@ NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung w
 
 - `macOS/`: Native SwiftUI macOS app with CAVEMAN install path, LLM-Fit, model import, safety boundary, docs, and DMG workflow.
 - `Windows/`: Native WinUI 3 / Windows App SDK client created with the same product direction and LLM-Fit concept.
-- `fundamentals/`: Original concept packages, pitch material, screenshots, source/data bundle, and early app mockups.
+- `-NALA-DNA-MED-fundamentdateien-/`: Original concept packages, pitch material, screenshots, source/data bundle, and early app mockups.
 - `docs/`: Cross-platform project vision, source archive notes, safety framing, and public-facing project story.
 
 ## Current UI Preview
@@ -29,7 +29,7 @@ NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung w
 |---|---|
 | ![macOS SwiftUI app preview](docs/assets/screenshots/macos/macos-swiftui-current.svg) | ![Windows WinUI app preview](docs/assets/screenshots/windows/windows-winui-current.svg) |
 
-Additional foundation screenshots are preserved in [`fundamentals/pre-screenshots/`](fundamentals/pre-screenshots/).
+Additional foundation screenshots are preserved in `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/`.
 
 ## Core Ideas
 
@@ -64,15 +64,14 @@ The Windows version is intentionally kept in this repository. Do not remove or o
 
 ## Fundamentals
 
-The original project foundation is preserved in `fundamentals/`:
+The original project foundation is preserved in `-NALA-DNA-MED-fundamentdateien-/`:
 
-- pre-app idea archives
-- pitch deck and pitch PDF
-- source/data package and PDF
-- early UI screenshots
+- `pre App Idee's/`: idea archives
+- `pre App Pitch/`: pitch deck, source/data PDF, and source package
+- `pre Screenshots/`: early UI screenshots
 - repository link artifact
 
-Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md), [docs/WIKI_INDEX.md](docs/WIKI_INDEX.md), and [fundamentals/README.md](fundamentals/README.md).
+Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md), [docs/WIKI_INDEX.md](docs/WIKI_INDEX.md), and [-NALA-DNA-MED-fundamentdateien-/README.md](-NALA-DNA-MED-fundamentdateien-/README.md).
 
 ## Next-Version Ideas
 
@@ -86,6 +85,15 @@ The roadmap is tracked in [docs/ROADMAP.md](docs/ROADMAP.md). Planned research d
 - restricted vault workflows with pseudonymization, consent, access logs, and doctor-notification concepts for clinically governed deployments
 
 See [docs/REFERENCES.md](docs/REFERENCES.md) for source links and [docs/SERVER_MULTIUSER_PLAN.md](docs/SERVER_MULTIUSER_PLAN.md) for the server concept.
+
+## License, Governance, and Responsible Use
+
+The project is intended to remain open and useful for students, schools, doctors, researchers, and public-interest builders. A final legal setup still needs specialist review because two goals must be reconciled carefully:
+
+- open-source access for public benefit
+- a future foundation or fund model for commercial profit-sharing, grants, student workspaces, and global-health research support
+
+See [docs/LEGAL_AND_GOVERNANCE_DRAFT.md](docs/LEGAL_AND_GOVERNANCE_DRAFT.md), [docs/FOUNDATION_CONCEPT.md](docs/FOUNDATION_CONCEPT.md), and [docs/RESPONSIBLE_USE_POLICY.md](docs/RESPONSIBLE_USE_POLICY.md). These are project drafts, not legal advice.
 
 ## Public Position
 

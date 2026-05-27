@@ -12,6 +12,12 @@ This is the first repo-native wiki index. It is intentionally markdown-first so 
 - [Sources and Foundation Archive](SOURCES_AND_FOUNDATION.md)
 - [Roadmap](ROADMAP.md)
 - [References](REFERENCES.md)
+- [Feature Matrix](FEATURE_MATRIX.md)
+- [Feature Parity Workflow](FEATURE_PARITY_WORKFLOW.md)
+- [Legal and Governance Draft](LEGAL_AND_GOVERNANCE_DRAFT.md)
+- [Responsible Use Policy Draft](RESPONSIBLE_USE_POLICY.md)
+- [Foundation Concept](FOUNDATION_CONCEPT.md)
+- [Server and Multi-User Plan](SERVER_MULTIUSER_PLAN.md)
 
 ## Platform Docs
 

@@ -4,13 +4,13 @@ This folder preserves the original foundation material for the NALA-DNA-Med proj
 
 ## Contents
 
-- `pre-app-ideas/`
+- `pre App Idee's/`
   - Early concept packages and mockup bundles.
-- `pre-app-pitch/`
+- `pre App Pitch/`
   - Pitch deck, pitch PDF, source/data PDF, and source package.
-- `pre-screenshots/`
+- `pre Screenshots/`
   - Early UI screens for login/TenantShield, projects, upload center, jobs/audit, settings/runtime, and BioLab graph view.
-- `Master-MD-NALA-DNA-Med.webloc`
+- `Master-MD-NALA-DNA-Med-.webloc`
   - Local link artifact for the GitHub repository.
 
 ## How to Use This Material
@@ -27,7 +27,7 @@ When turning this material into public claims, keep this distinction clear:
 ## Recommended Reading Order
 
 1. `../docs/PROJECT_VISION.md`
-2. `pre-app-pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
-3. `pre-app-pitch/NALA-DNA-Med_Quellen-und-Datenblatt.pdf`
-4. `pre-screenshots/`
+2. `pre App Pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
+3. `pre App Pitch/NALA-DNA-Med_Quellen-und-Datenblatt.pdf`
+4. `pre Screenshots/`
 5. `../macOS/docs/generation/NALA-DNA-Med_ALL_IN_ONE_HANDOFF.md`

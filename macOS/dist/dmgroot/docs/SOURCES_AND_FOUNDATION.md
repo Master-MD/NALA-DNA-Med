@@ -4,7 +4,7 @@ Status: 2026-05-27
 
 ## Repository Source Areas
 
-- `fundamentals/`
+- `-NALA-DNA-MED-fundamentdateien-/`
   - Original concept, pitch, source/data, and screenshot materials.
 - `macOS/docs/`
   - SwiftUI app specification, LLM-Fit notes, safety notes, installation docs, DMG packaging docs, and Codex/Antigravity generation prompts.
@@ -15,24 +15,24 @@ Status: 2026-05-27
 
 ### Idea Archives
 
-- `fundamentals/pre-app-ideas/NALA-DNA-Med-aPP_MasterPackage.zip`
-- `fundamentals/pre-app-ideas/NALA-DNA-Med-aPP_extra_mockups.zip`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Idee's/NALA-DNA-Med-aPP_MasterPackage.zip`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Idee's/NALA-DNA-Med-aPP_extra_mockups.zip`
 
 ### Pitch and Source Package
 
-- `fundamentals/pre-app-pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
-- `fundamentals/pre-app-pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pptx`
-- `fundamentals/pre-app-pitch/NALA-DNA-Med_Quellen-und-Datenblatt.pdf`
-- `fundamentals/pre-app-pitch/NALA-DNA-Med_Quellenpaket.zip`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pdf`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Doctor-Funding-Pitch.pptx`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Quellen-und-Datenblatt.pdf`
+- `-NALA-DNA-MED-fundamentdateien-/pre App Pitch/NALA-DNA-Med_Quellenpaket.zip`
 
 ### Screenshots
 
-- `fundamentals/pre-screenshots/04_login_tenant_shield.png`
-- `fundamentals/pre-screenshots/05_projects_vaults.png`
-- `fundamentals/pre-screenshots/06_upload_center.png`
-- `fundamentals/pre-screenshots/07_jobs_audit.png`
-- `fundamentals/pre-screenshots/08_settings_backup_runtime.png`
-- `fundamentals/pre-screenshots/09_biolab_graph_view.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/04_login_tenant_shield.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/05_projects_vaults.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/06_upload_center.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/07_jobs_audit.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/08_settings_backup_runtime.png`
+- `-NALA-DNA-MED-fundamentdateien-/pre Screenshots/09_biolab_graph_view.png`
 
 ## Evidence Hygiene
 
