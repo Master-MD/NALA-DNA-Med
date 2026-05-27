@@ -6,6 +6,8 @@ The project is motivated by a concern many patients and researchers recognize: m
 
 The long-term hope is that researchers, clinicians, programmers, and patient advocates can build on this foundation. A programmer may not know enough biology alone. A domain expert may not want to build a whole app alone. This repository is intended to make collaboration easier.
 
+In public language, the project should be framed positively: better tools for specific, evidence-backed disease research; better source organization; better collaboration; and better local AI workflows for hypotheses that still require validation.
+
 ## One-Sentence Description
 
 NALA-DNA-Med is local-first biomedical research-support software for organizing sources, hypotheses, model workflows, and safety-aware project notes across macOS and Windows.

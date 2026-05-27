@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780" role="img" aria-label="NALA-DNA-Med Windows WinUI app preview">
+  <rect width="1280" height="780" rx="24" fill="#0c0c0c"/>
+  <rect x="34" y="34" width="1212" height="712" rx="18" fill="#111111" stroke="#2c2c2c"/>
+  <rect x="34" y="34" width="294" height="712" rx="18" fill="#090909"/>
+  <text x="72" y="92" fill="#00ff88" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">NALA-DNA-Med</text>
+  <text x="72" y="124" fill="#a8a8a8" font-family="Segoe UI, Arial, sans-serif" font-size="15">Windows Edition / WinUI 3</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="17">
+    <rect x="58" y="164" width="236" height="44" rx="8" fill="#183522"/>
+    <text x="82" y="193" fill="#ffffff">Dashboard</text>
+    <text x="82" y="244" fill="#d6d6d6">LLM-Fit Advisor</text>
+    <text x="82" y="294" fill="#d6d6d6">Projects / Vaults</text>
+    <text x="82" y="344" fill="#d6d6d6">Upload Center</text>
+    <text x="82" y="394" fill="#d6d6d6">BioLab Demo</text>
+    <text x="82" y="444" fill="#d6d6d6">Jobs / Audit</text>
+    <text x="82" y="494" fill="#d6d6d6">Resources</text>
+    <text x="82" y="642" fill="#d6d6d6">Settings</text>
+  </g>
+  <g transform="translate(380,86)" font-family="Segoe UI, Arial, sans-serif">
+    <text x="0" y="0" fill="#00ff88" font-size="34" font-weight="700">Dashboard</text>
+    <text x="0" y="35" fill="#888888" font-size="18">Local Lite Mode Active</text>
+    <g transform="translate(0,78)">
+      <rect width="258" height="128" rx="10" fill="#1b1b1b" stroke="#333333"/>
+      <text x="22" y="38" fill="#cccccc" font-size="18">Projects</text>
+      <text x="22" y="88" fill="#ffffff" font-size="40" font-weight="760">3 Active</text>
+    </g>
+    <g transform="translate(290,78)">
+      <rect width="258" height="128" rx="10" fill="#1b1b1b" stroke="#333333"/>
+      <text x="22" y="38" fill="#cccccc" font-size="18">Local Resources</text>
+      <text x="22" y="88" fill="#ffffff" font-size="40" font-weight="760">1.2 GB</text>
+    </g>
+    <g transform="translate(580,78)">
+      <rect width="258" height="128" rx="10" fill="#1b1b1b" stroke="#333333"/>
+      <text x="22" y="38" fill="#cccccc" font-size="18">LLM-Fit Profile</text>
+      <text x="22" y="88" fill="#00ff88" font-size="40" font-weight="760">Kleiner</text>
+    </g>
+    <rect x="0" y="258" width="838" height="238" rx="10" fill="#151515" stroke="#333333"/>
+    <text x="26" y="300" fill="#00ff88" font-size="28" font-weight="700">LLM-Fit Advisor</text>
+    <text x="26" y="336" fill="#cccccc" font-size="17">Analysiert System-Hardware und schlaegt ein lokales KI-Modell vor.</text>
+    <rect x="26" y="370" width="786" height="72" rx="8" fill="#281010" stroke="#7c2525"/>
+    <text x="48" y="413" fill="#ff8888" font-size="17">Large local model downloads require confirmation and enough disk space.</text>
+    <rect x="26" y="464" width="198" height="44" rx="7" fill="#00ff88"/>
+    <text x="54" y="492" fill="#050505" font-size="17" font-weight="700">Download model</text>
+    <text x="0" y="552" fill="#888888" font-size="14">Preview generated from current WinUI source. Runtime screenshot pending on Windows.</text>
+  </g>
+</svg>

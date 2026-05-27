@@ -10,6 +10,8 @@ NALA-DNA-Med exists to give researchers, doctors, patient advocates, builders, a
 
 This software does not claim to solve that problem by itself. Its goal is to provide a practical open foundation where people can organize evidence, explore molecular and biological hypotheses, inspect risks, compare ideas, and build local AI-assisted workflows without handing sensitive research data to a cloud service by default.
 
+The media-facing version is simple: NALA-DNA-Med is an open research-support tool for turning scattered biomedical ideas and sources into structured, testable hypotheses. The long-term hope is to help teams find more precise therapeutic directions for specific diseases, understand disease mechanisms in context, and prioritize interventions that could be validated by real science.
+
 ## Kurzfassung
 
 NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung werden: nicht als Heilversprechen, sondern als Werkzeug, um Ideen, Quellen, Molekuel-/Protein-Daten, Nebenwirkungsfragen und regenerative Forschungsansaetze sauberer zusammenzubringen.
@@ -20,6 +22,14 @@ NALA-DNA-Med soll ein offener Grundstein fuer lokale biomedizinische Forschung w
 - `Windows/`: Native WinUI 3 / Windows App SDK client created with the same product direction and LLM-Fit concept.
 - `fundamentals/`: Original concept packages, pitch material, screenshots, source/data bundle, and early app mockups.
 - `docs/`: Cross-platform project vision, source archive notes, safety framing, and public-facing project story.
+
+## Current UI Preview
+
+| macOS SwiftUI | Windows WinUI |
+|---|---|
+| ![macOS SwiftUI app preview](docs/assets/screenshots/macos/macos-swiftui-current.svg) | ![Windows WinUI app preview](docs/assets/screenshots/windows/windows-winui-current.svg) |
+
+Additional foundation screenshots are preserved in [`fundamentals/pre-screenshots/`](fundamentals/pre-screenshots/).
 
 ## Core Ideas
 
@@ -62,14 +72,27 @@ The original project foundation is preserved in `fundamentals/`:
 - early UI screenshots
 - repository link artifact
 
-Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md) and [fundamentals/README.md](fundamentals/README.md).
+Start with [docs/PROJECT_VISION.md](docs/PROJECT_VISION.md), [docs/WIKI_INDEX.md](docs/WIKI_INDEX.md), and [fundamentals/README.md](fundamentals/README.md).
+
+## Next-Version Ideas
+
+The roadmap is tracked in [docs/ROADMAP.md](docs/ROADMAP.md). Planned research directions include:
+
+- an `autoresearch`-inspired loop for bounded software/retrieval experiments, with metrics and human review
+- a MemPalace-style local memory layer for project notes, sources, decisions, and recall
+- an LLM-maintained markdown wiki with immutable raw sources and auditable public/private summaries
+- an Ubuntu server edition with multi-user data vaults and light clients for macOS, Windows, iOS, Android, and web
+- a public wiki for non-sensitive methods, student exercises, and reusable research notes
+- restricted vault workflows with pseudonymization, consent, access logs, and doctor-notification concepts for clinically governed deployments
+
+See [docs/REFERENCES.md](docs/REFERENCES.md) for source links and [docs/SERVER_MULTIUSER_PLAN.md](docs/SERVER_MULTIUSER_PLAN.md) for the server concept.
 
 ## Public Position
 
 This project is allowed to be ambitious, but it must remain honest:
 
 - It can help organize and explore biomedical research hypotheses.
-- It can help compare sources, risks, and possible directions.
+- It can help compare sources, mechanisms, risks, and possible research directions.
 - It can help programmers and domain experts collaborate.
 - It cannot claim to cure cancer, autoimmune disease, eye disease, organ damage, or any other condition.
 - Any real therapeutic discovery requires laboratory validation, clinical trials, regulatory review, and medical responsibility.
