@@ -1,6 +1,21 @@
 # NALA-DNA-Med macOS
 
+<p align="center">
+  <img src="../docs/assets/appicon.png" alt="NALA-DNA-Med App Icon" width="128" height="128" />
+</p>
+
 Native SwiftUI macOS app for local-first biomedical research-support workflows.
+
+---
+
+### 📥 Download Pre-Compiled macOS App / Fertige macOS App Herunterladen
+
+> [!IMPORTANT]
+> **No compilation required!** You do not need to build the Swift code manually. Simply download the pre-compiled `.dmg` file directly from the **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)** page, open it, and drag the app into your `/Applications` folder!
+>
+> **Keine manuelle Kompilierung notwendig!** Sie müssen das Swift-Projekt nicht selbst bauen. Laden Sie einfach das fertige `.dmg`-Paket direkt von der **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)**-Seite herunter, öffnen Sie es und ziehen Sie die App direkt in Ihren `/Applications`-Ordner!
+
+---
 
 > NALA-DNA-Med is not medical advice, not a medical device, and not validated for diagnosis, treatment, prescription, or clinical decision-making.
 

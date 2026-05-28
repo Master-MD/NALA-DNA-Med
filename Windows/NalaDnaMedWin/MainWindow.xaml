@@ -13,27 +13,27 @@
                         PaneDisplayMode="Left"
                         ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Dashboard" Tag="Dashboard" />
-                <NavigationViewItem Icon="Find" Content="LLM-Fit Advisor" Tag="LLMFit" />
-                <NavigationViewItem Icon="Library" Content="Projects / Vaults" Tag="Projects" />
-                <NavigationViewItem Icon="Upload" Content="Upload Center" Tag="Upload" />
-                <NavigationViewItem Icon="Find" Content="BioLab Demo" Tag="BioLab" />
-                <NavigationViewItem Icon="PreviewLink" Content="Jobs / Audit" Tag="Jobs" />
-                <NavigationViewItem Icon="List" Content="Resources" Tag="Resources" />
+                <NavigationViewItem x:Name="NavDashboard" Icon="Home" Content="Dashboard" Tag="Dashboard" />
+                <NavigationViewItem x:Name="NavLLMFit" Icon="Find" Content="LLM-Fit Advisor" Tag="LLMFit" />
+                <NavigationViewItem x:Name="NavProjects" Icon="Library" Content="Projects / Vaults" Tag="Projects" />
+                <NavigationViewItem x:Name="NavUpload" Icon="Upload" Content="Upload Center" Tag="Upload" />
+                <NavigationViewItem x:Name="NavBioLab" Icon="Find" Content="BioLab Demo" Tag="BioLab" />
+                <NavigationViewItem x:Name="NavJobs" Icon="PreviewLink" Content="Jobs / Audit" Tag="Jobs" />
+                <NavigationViewItem x:Name="NavResources" Icon="List" Content="Resources" Tag="Resources" />
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Icon="Setting" Content="Settings" Tag="Settings" />
+                <NavigationViewItem x:Name="NavSettings" Icon="Setting" Content="Settings" Tag="Settings" />
             </NavigationView.FooterMenuItems>
             
             <Frame x:Name="ContentFrame" Padding="24">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
                     <Image Source="Assets/appicon.png" Width="200" Height="200" />
-                    <TextBlock Text="Welcome to NALA-DNA-Med" FontSize="32" FontWeight="Bold" Foreground="#FF00FF88" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Native WinUI 3 Client - Local Lite Mode" FontSize="18" Foreground="#FFCCCCCC" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="WelcomeTitleTextBlock" Text="Welcome to NALA-DNA-Med" FontSize="32" FontWeight="Bold" Foreground="#FF00FF88" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="WelcomeSubtitleTextBlock" Text="Native WinUI 3 Client - Local Lite Mode" FontSize="18" Foreground="#FFCCCCCC" HorizontalAlignment="Center"/>
                     <Border Background="#20FF0000" BorderBrush="#80FF0000" BorderThickness="1" CornerRadius="8" Padding="16" Margin="0,20,0,0">
                         <StackPanel>
-                            <TextBlock Text="! NOT MEDICAL ADVICE !" FontWeight="Bold" Foreground="#FFFF4444" HorizontalAlignment="Center"/>
-                            <TextBlock Text="This software is for research support only. It is not a medical device." Foreground="#FFFF8888" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                            <TextBlock x:Name="WelcomeWarningTitleTextBlock" Text="! NOT MEDICAL ADVICE !" FontWeight="Bold" Foreground="#FFFF4444" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="WelcomeWarningSubtitleTextBlock" Text="This software is for research support only. It is not a medical device." Foreground="#FFFF8888" HorizontalAlignment="Center" Margin="0,4,0,0"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>

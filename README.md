@@ -1,6 +1,25 @@
 # NALA-DNA-Med
 
+<p align="center">
+  <img src="docs/assets/appicon.png" alt="NALA-DNA-Med App Icon" width="128" height="128" />
+</p>
+
 Native, local-first biomedical research-support software for macOS and Windows.
+
+---
+
+### 📥 Download Pre-Compiled Releases / Fertige Apps Herunterladen
+
+> [!IMPORTANT]
+> **No compilation required!** You do not need to compile the code yourself. You can download the fully built and ready-to-run installation files directly from the **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)** page:
+> - 🍏 **macOS:** Download the `.dmg` file, open it, and drag the app to your `/Applications` folder.
+> - Windows **Windows:** Download the `.zip` archive, extract it, and double-click `NalaDnaMedWin.exe`.
+>
+> **Keine manuelle Kompilierung notwendig!** Sie müssen den Code nicht selbst bauen. Laden Sie die fertigen Installationsdateien direkt von der **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)**-Seite herunter:
+> - 🍏 **macOS:** Laden Sie die `.dmg`-Datei herunter, öffnen Sie diese und ziehen Sie die App in Ihren `/Applications`-Ordner.
+> - Windows **Windows:** Laden Sie das `.zip`-Archiv herunter, entpacken Sie es und starten Sie die `NalaDnaMedWin.exe` per Doppelklick.
+
+---
 
 > **Critical boundary:** NALA-DNA-Med is not medical advice, not a medical device, and is not validated for diagnosis, treatment, prescription, or clinical decision-making.
 

@@ -1,6 +1,21 @@
 # NALA-DNA-Med (Windows Edition)
 
+<p align="center">
+  <img src="../docs/assets/appicon.png" alt="NALA-DNA-Med App Icon" width="128" height="128" />
+</p>
+
 Native WinUI 3 research-support app concept for local-first biomedical project work.
+
+---
+
+### 📥 Download Pre-Compiled Windows App / Fertige Windows App Herunterladen
+
+> [!IMPORTANT]
+> **No compilation required!** You do not need to build the C# WinUI 3 project manually. Simply download the pre-compiled `.zip` file directly from the **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)** page, extract it, and run `NalaDnaMedWin.exe` instantly!
+>
+> **Keine manuelle Kompilierung notwendig!** Sie müssen das C# WinUI 3 Projekt nicht selbst bauen. Laden Sie einfach das fertige `.zip`-Paket direkt von der **[GitHub Releases](https://github.com/Master-MD/NALA-DNA-Med/releases)**-Seite herunter, entpacken Sie es und starten Sie die `NalaDnaMedWin.exe` direkt!
+
+---
 
 > **CRITICAL BOUNDARY:** NALA-DNA-Med is not medical advice, not a medical device, and not validated for diagnosis, treatment, prescription, or clinical decision-making. 
 

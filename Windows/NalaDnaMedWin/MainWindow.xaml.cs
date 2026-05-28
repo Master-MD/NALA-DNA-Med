@@ -20,10 +20,32 @@ namespace NalaDnaMedWin
 {
     public sealed partial class MainWindow : Window
     {
+        public static MainWindow Instance { get; private set; }
+
         public MainWindow()
         {
+            Instance = this;
             this.InitializeComponent();
             SetWindowIcon("Assets/appicon.png");
+            TranslateUI();
+        }
+
+        public void TranslateUI()
+        {
+            var loc = Services.LocalizationService.Instance;
+            NavDashboard.Content = loc.Get("Dashboard");
+            NavLLMFit.Content = loc.Get("LllFitAdvisor");
+            NavProjects.Content = loc.Get("ProjectsVaults");
+            NavUpload.Content = loc.Get("UploadCenter");
+            NavBioLab.Content = loc.Get("BioLabDemo");
+            NavJobs.Content = loc.Get("JobsAudit");
+            NavResources.Content = loc.Get("Resources");
+            NavSettings.Content = loc.Get("Settings");
+
+            if (WelcomeTitleTextBlock != null) WelcomeTitleTextBlock.Text = loc.Get("Welcome");
+            if (WelcomeSubtitleTextBlock != null) WelcomeSubtitleTextBlock.Text = loc.Get("LocalLiteMode");
+            if (WelcomeWarningTitleTextBlock != null) WelcomeWarningTitleTextBlock.Text = loc.Get("NotMedicalAdviceTitle");
+            if (WelcomeWarningSubtitleTextBlock != null) WelcomeWarningSubtitleTextBlock.Text = loc.Get("NotMedicalAdviceSubtitle");
         }
 
         private void SetWindowIcon(string iconPath)

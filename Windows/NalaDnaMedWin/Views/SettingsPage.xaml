@@ -9,20 +9,32 @@
 
     <Grid Padding="24">
         <StackPanel Spacing="16">
-            <TextBlock Text="Settings" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
-            <TextBlock Text="Configure NALA-DNA-Med system preferences." FontSize="14" Foreground="#FF888888" />
+            <!-- Header -->
+            <TextBlock x:Name="SettingsTitle" Text="Settings / Einstellungen" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+            <TextBlock x:Name="SettingsSubtitle" Text="Configure NALA-DNA-Med system preferences." FontSize="14" Foreground="#FF888888" />
 
-            <ToggleSwitch Header="Accept Research Safety Agreement" IsOn="True" Margin="0,10,0,0" />
-            <TextBlock Text="By enabling this, you acknowledge that NALA-DNA-Med is for research-support simulation only, is not a medical device, and does not provide clinical advice or treatment guidelines." FontSize="12" Foreground="#FF888888" Width="400" HorizontalAlignment="Left" TextWrapping="Wrap" />
+            <!-- Multilingual Language Selector -->
+            <ComboBox x:Name="LanguageComboBox" Header="Language / Sprache / Langue / Lingua" SelectedIndex="0" Margin="0,10,0,0" Width="240" SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBoxItem Content="English (en)" Tag="en" />
+                <ComboBoxItem Content="Deutsch (de)" Tag="de" />
+                <ComboBoxItem Content="Français (fr)" Tag="fr" />
+                <ComboBoxItem Content="Italiano (it)" Tag="it" />
+            </ComboBox>
 
-            <ComboBox Header="Active LLM-Fit Profile" SelectedIndex="0" Margin="0,16,0,0" Width="200">
+            <!-- Toggle Switch -->
+            <ToggleSwitch x:Name="SafetyAgreementToggle" Header="Accept Research Safety Agreement" IsOn="True" Margin="0,16,0,0" />
+            <TextBlock x:Name="SafetyAgreementDesc" Text="By enabling this, you acknowledge that NALA-DNA-Med is for research-support simulation only, is not a medical device, and does not provide clinical advice or treatment guidelines." FontSize="12" Foreground="#FF888888" Width="400" HorizontalAlignment="Left" TextWrapping="Wrap" />
+
+            <!-- LLM Fit Profile -->
+            <ComboBox x:Name="LlmProfileComboBox" Header="Active LLM-Fit Profile" SelectedIndex="0" Margin="0,16,0,0" Width="200">
                 <ComboBoxItem Content="Kleiner" />
                 <ComboBoxItem Content="Optimal" />
                 <ComboBoxItem Content="Maximal" />
             </ComboBox>
 
-            <TextBlock Text="Backup & Restore Local Workspace" FontSize="18" FontWeight="SemiBold" Foreground="#FFFFFFFF" Margin="0,20,0,0" />
-            <Button Content="Export Timestamped Local Backup (.zip)" Click="Backup_Click" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" Margin="0,6,0,0" />
+            <!-- Backup & Restore -->
+            <TextBlock x:Name="BackupTitle" Text="Backup & Restore Local Workspace" FontSize="18" FontWeight="SemiBold" Foreground="#FFFFFFFF" Margin="0,20,0,0" />
+            <Button x:Name="BackupButton" Content="Export Timestamped Local Backup (.zip)" Click="Backup_Click" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" Margin="0,6,0,0" />
             <TextBlock x:Name="BackupStatusTextBlock" Text="" Foreground="#FF00FF88" FontSize="14" />
         </StackPanel>
     </Grid>

@@ -15,9 +15,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Spacing="8">
-            <TextBlock Text="BioLab Demo" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+            <TextBlock x:Name="BioLabTitle" Text="BioLab Demo" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
             <Border Background="#20FF0000" BorderBrush="#80FF0000" BorderThickness="1" CornerRadius="4" Padding="8">
-                <TextBlock Text="CAUTION: Simulated dry-run only. Not for clinical use." Foreground="#FFFF8888" FontWeight="Bold" />
+                <TextBlock x:Name="BioLabWarningTextBlock" Text="CAUTION: Simulated dry-run only. Not for clinical use." Foreground="#FFFF8888" FontWeight="Bold" />
             </Border>
         </StackPanel>
 
@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBox x:Name="QueryTextBox" PlaceholderText="Search literature or compounds..." Grid.Column="0" Background="#11FFFFFF" Foreground="#FFFFFFFF"/>
-            <Button Content="Simulate" Grid.Column="1" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" Click="Simulate_Click" />
+            <Button x:Name="SimulateButton" Content="Simulate" Grid.Column="1" Background="#FF00FF88" Foreground="#FF000000" FontWeight="Bold" Click="Simulate_Click" />
         </Grid>
     </Grid>
 </Page>

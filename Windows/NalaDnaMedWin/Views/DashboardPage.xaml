@@ -9,8 +9,8 @@
 
     <Grid Padding="24">
         <StackPanel Spacing="16">
-            <TextBlock Text="Dashboard" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
-            <TextBlock Text="Local Lite Mode Active" FontSize="16" Foreground="#FF888888" />
+            <TextBlock x:Name="DashboardTitle" Text="Dashboard" FontSize="28" FontWeight="SemiBold" Foreground="#FF00FF88" />
+            <TextBlock x:Name="DashboardSubtitle" Text="Local Lite Mode Active" FontSize="16" Foreground="#FF888888" />
             
             <Grid ColumnSpacing="16" Margin="0,20,0,0">
                 <Grid.ColumnDefinitions>
@@ -21,19 +21,19 @@
 
                 <Border Grid.Column="0" Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="16">
                     <StackPanel>
-                        <TextBlock Text="Projects" FontSize="18" Foreground="#FFCCCCCC" />
-                        <TextBlock Text="3 Active" FontSize="36" FontWeight="Bold" Foreground="#FFFFFFFF" Margin="0,8,0,0"/>
+                        <TextBlock x:Name="ProjectsCardTitle" Text="Projects" FontSize="18" Foreground="#FFCCCCCC" />
+                        <TextBlock x:Name="ProjectsCardValue" Text="3 Active" FontSize="36" FontWeight="Bold" Foreground="#FFFFFFFF" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Grid.Column="1" Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="16">
                     <StackPanel>
-                        <TextBlock Text="Local Resources" FontSize="18" Foreground="#FFCCCCCC" />
+                        <TextBlock x:Name="ResourcesCardTitle" Text="Local Resources" FontSize="18" Foreground="#FFCCCCCC" />
                         <TextBlock Text="1.2 GB" FontSize="36" FontWeight="Bold" Foreground="#FFFFFFFF" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
                 <Border Grid.Column="2" Background="#11FFFFFF" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="8" Padding="16">
                     <StackPanel>
-                        <TextBlock Text="LLM-Fit Profile" FontSize="18" Foreground="#FFCCCCCC" />
+                        <TextBlock x:Name="LlmFitCardTitle" Text="LLM-Fit Profile" FontSize="18" Foreground="#FFCCCCCC" />
                         <TextBlock Text="Kleiner" FontSize="36" FontWeight="Bold" Foreground="#FF00FF88" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
