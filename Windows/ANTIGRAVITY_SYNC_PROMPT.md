@@ -19,6 +19,7 @@ You are working in the `NALA-DNA-Med` monorepo. The goal is to bring the Windows
 - Do not overwrite Windows app identity, icons, project files, ports, or installer configuration unless the TODO explicitly requires it.
 - Do not duplicate old source drops, generated binaries, private PDFs, ZIP packages, local paths, personal e-mail addresses, API keys, secrets, or real health data.
 - Do not re-add `-NALA-DNA-MED-fundamentdateien-/`, `macOS/dist/`, generated `.app` bundles, generated DMGs, or obsolete mockup screenshots to Git.
+- If `docs/fundamentals/`, `macOS/dist/`, root files with trailing spaces, old pitch PDFs, old ZIP packages, or obsolete screenshot dumps appear in `git status`, remove them from Git before doing any feature work.
 - Do not copy SwiftUI code into Windows. Port behavior into native WinUI/C# patterns.
 - New parity work starts as `Experimental`.
 - Keep the medical safety boundary visible.
@@ -66,3 +67,13 @@ generated binaries and installer artifacts
 ```
 
 If a file is useful but private, summarize it into public markdown instead of committing the raw source file.
+
+## Hard Git Gate
+
+Before any commit, the following command must return no tracked files:
+
+```bash
+git ls-files | rg '(^-NALA-DNA-MED-fundamentdateien-/|^docs/fundamentals/|^macOS/dist/|NALA-DNA-Med_Doctor-Funding-Pitch|NALA-DNA-Med_Quellen|NALA-DNA-Med-aPP_|04_login|05_projects|06_upload|07_jobs|08_settings|09_biolab|Master-MD-NALA-DNA-Med.*webloc)'
+```
+
+If it prints anything, stop and remove those tracked files instead of continuing.

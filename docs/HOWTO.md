@@ -19,7 +19,14 @@ swift build
 ./script/make_dmg.sh
 ```
 
-Generated DMGs and app bundles stay local under `macOS/dist/` and are ignored by Git.
+The default DMG is universal for Apple Silicon and Intel. Generated DMGs and app bundles stay local under `macOS/dist/` and are ignored by Git.
+
+Optional architecture-specific DMGs:
+
+```bash
+./script/make_dmg.sh arm64
+./script/make_dmg.sh x86_64
+```
 
 ## For Windows Development
 

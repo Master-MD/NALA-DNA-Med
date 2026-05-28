@@ -15,23 +15,71 @@ APP_RESOURCES="$APP_CONTENTS/Resources"
 APP_BINARY="$APP_MACOS/$APP_NAME"
 INFO_PLIST="$APP_CONTENTS/Info.plist"
 ICNS_PATH="$ROOT_DIR/Resources/NALA-DNA-Med.icns"
+RELEASE_ARCHS="${NALA_MACOS_ARCHS:-universal}"
+
+release_triple_for_arch() {
+  case "$1" in
+    arm64)
+      echo "arm64-apple-macosx$MIN_SYSTEM_VERSION"
+      ;;
+    x86_64)
+      echo "x86_64-apple-macosx$MIN_SYSTEM_VERSION"
+      ;;
+    *)
+      echo "Unsupported architecture: $1" >&2
+      exit 2
+      ;;
+  esac
+}
+
+build_release_arch() {
+  local arch="$1"
+  local triple
+  triple="$(release_triple_for_arch "$arch")"
+  swift build -c release --triple "$triple" >&2
+  echo "$(swift build -c release --triple "$triple" --show-bin-path)/$APP_NAME"
+}
+
+stage_binary() {
+  local config="$1"
+
+  if [[ "$config" == "release" ]]; then
+    case "$RELEASE_ARCHS" in
+      universal)
+        local arm_binary x86_binary
+        arm_binary="$(build_release_arch arm64)"
+        x86_binary="$(build_release_arch x86_64)"
+        lipo -create "$arm_binary" "$x86_binary" -output "$APP_BINARY"
+        ;;
+      arm64|x86_64)
+        local single_binary
+        single_binary="$(build_release_arch "$RELEASE_ARCHS")"
+        cp "$single_binary" "$APP_BINARY"
+        ;;
+      native)
+        swift build -c release
+        cp "$(swift build -c release --show-bin-path)/$APP_NAME" "$APP_BINARY"
+        ;;
+      *)
+        echo "Unsupported NALA_MACOS_ARCHS: $RELEASE_ARCHS" >&2
+        echo "Use universal, arm64, x86_64, or native." >&2
+        exit 2
+        ;;
+    esac
+  else
+    swift build
+    cp "$(swift build --show-bin-path)/$APP_NAME" "$APP_BINARY"
+  fi
+}
 
 stage_app() {
   local config="${1:-debug}"
   "$ROOT_DIR/script/make_icns.sh" >/dev/null
   pkill -x "$APP_NAME" >/dev/null 2>&1 || true
 
-  if [[ "$config" == "release" ]]; then
-    swift build -c release
-    BUILD_BINARY="$(swift build -c release --show-bin-path)/$APP_NAME"
-  else
-    swift build
-    BUILD_BINARY="$(swift build --show-bin-path)/$APP_NAME"
-  fi
-
   rm -rf "$APP_BUNDLE"
   mkdir -p "$APP_MACOS" "$APP_RESOURCES"
-  cp "$BUILD_BINARY" "$APP_BINARY"
+  stage_binary "$config"
   cp "$ICNS_PATH" "$APP_RESOURCES/NALA-DNA-Med.icns"
   chmod +x "$APP_BINARY"
 
@@ -67,6 +115,7 @@ stage_app() {
 PLIST
 
   /usr/bin/codesign --force --deep --sign - "$APP_BUNDLE" >/dev/null
+  lipo -info "$APP_BINARY"
 }
 
 open_app() {

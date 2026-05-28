@@ -21,6 +21,7 @@ This file is the handoff list for Antigravity after recent macOS work.
   - Keep Windows docs aligned with root docs and macOS safety language.
   - Link to `docs/PITCH_SUMMARY.md`, `docs/FAQ.md`, `docs/HOWTO.md`, and `docs/SOURCES_AND_FOUNDATION.md`.
   - Do not re-add old source drops, generated app artifacts, private PDFs/ZIPs, local filesystem paths, personal e-mail addresses, API keys, secrets, or real health data.
+  - Before committing, confirm that `docs/fundamentals/`, `macOS/dist/`, old pitch/source ZIPs, and obsolete screenshot dumps are not tracked by Git.
   - Run a privacy scan before committing Windows changes.
 
 ## Experimental First

@@ -53,7 +53,12 @@ swift build
 ./script/make_dmg.sh
 ```
 
-The generated DMG is local-only at `macOS/dist/NALA-DNA-Med.dmg` and is ignored by Git.
+The default DMG is a local-only universal macOS build for Apple Silicon and Intel:
+
+- `macOS/dist/NALA-DNA-Med-universal.dmg`
+- `macOS/dist/NALA-DNA-Med.dmg` as the stable latest alias
+
+Optional architecture-specific builds are available with `./script/make_dmg.sh arm64` and `./script/make_dmg.sh x86_64`. The full `macOS/dist/` folder is ignored by Git.
 
 ### Windows
 

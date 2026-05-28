@@ -5,9 +5,24 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_NAME="NALA-DNA-Med"
 DIST_DIR="$ROOT_DIR/dist"
 DMG_ROOT="$DIST_DIR/dmgroot"
-DMG_PATH="$DIST_DIR/$APP_NAME.dmg"
+ARCH_MODE="${1:-universal}"
 
-"$ROOT_DIR/script/build_and_run.sh" release-stage >/dev/null
+case "$ARCH_MODE" in
+  universal|arm64|x86_64|native)
+    ;;
+  *)
+    echo "usage: $0 [universal|arm64|x86_64|native]" >&2
+    exit 2
+    ;;
+esac
+
+if [[ "$ARCH_MODE" == "native" ]]; then
+  DMG_PATH="$DIST_DIR/$APP_NAME-native.dmg"
+else
+  DMG_PATH="$DIST_DIR/$APP_NAME-$ARCH_MODE.dmg"
+fi
+
+NALA_MACOS_ARCHS="$ARCH_MODE" "$ROOT_DIR/script/build_and_run.sh" release-stage >/dev/null
 
 rm -rf "$DMG_ROOT" "$DMG_PATH"
 mkdir -p "$DMG_ROOT"
@@ -25,5 +40,9 @@ hdiutil create \
   -ov \
   -format UDZO \
   "$DMG_PATH"
+
+if [[ "$ARCH_MODE" == "universal" ]]; then
+  cp "$DMG_PATH" "$DIST_DIR/$APP_NAME.dmg"
+fi
 
 echo "$DMG_PATH"
